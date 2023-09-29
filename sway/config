@@ -23,11 +23,7 @@ set $menu wofi --show drun --allow-images
 include /etc/sway/config-vars.d/*
 
 ### Output configuration
-#
-# output "*" bg /home/casper/Pictures/ink-joy.svg fill
-# output "*" bg /home/casper/Pictures/tuxworlddomination.jpeg fill
-output eDP-1 resolution 1920x1080 scale 1
-output "*" bg /home/casper/Pictures/Wallpapers/groot_root.jpg fill
+output "*" bg /home/casper/Pictures/gruvbox.jpeg fill
 
 #
 # Example configuration:
@@ -76,7 +72,7 @@ input * xkb_layout "se"
     # Despite the name, also works for non-floating windows.
     # Change normal to inverse to use left mouse button for resizing and right
     # mouse button for dragging.
-    floating_modifier $mod normal
+    #floating_modifier $mod normal
 
     # Reload the configuration file
     bindsym $mod+Shift+c reload
@@ -205,7 +201,7 @@ bar {
 
     # When the status_command prints a new line to stdout, swaybar updates.
     # The default just shows the current date and time.
-    status_command while date +'BAT0 '$(cat /sys/class/power_supply/BAT0/capacity)%' | %Y-%m-%d | %I:%M:%S %p'; do sleep 1; done
+    status_command while date; do sleep 1; done
 
     colors {
         statusline #ffffff
@@ -213,6 +209,9 @@ bar {
         inactive_workspace #32323200 #32323200 #5c5c5c
     }
 }
+
+# border colours
+client.focused #fe7019 #d65d0e #fbdbe2 #d65d0e #d65d0e
 
 # fun stuff
 
